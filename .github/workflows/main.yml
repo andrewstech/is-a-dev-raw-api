@@ -30,3 +30,6 @@ jobs:
         run: |
           ls
           node index.js
+          git add index.json
+          git commit -m "Updated"
+          git push
