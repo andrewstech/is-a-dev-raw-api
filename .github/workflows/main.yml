@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: is-a-dev/register
-          path: domains  
+          path: main  
 
       - name: Run script
         uses: actions/setup-node@v2
