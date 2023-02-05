@@ -24,7 +24,7 @@ fs.readdir(directoryPath, function (err, files) {
         } else {
           delete item.owner.email;
         }
-        item.file = file;
+        item.domain = file;
       }
 
       combinedArray = combinedArray.concat(dataArray);
