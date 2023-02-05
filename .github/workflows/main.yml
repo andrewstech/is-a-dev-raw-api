@@ -29,6 +29,8 @@ jobs:
       - name: Execute script
         run: |
           ls
+          git config --global user.email "andrew@win11react.com"
+          git config --global user.name "andrewstech"
           node index.js
           git add index.json
           git commit -m "Updated"
