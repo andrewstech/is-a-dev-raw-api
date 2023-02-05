@@ -1,6 +1,7 @@
 name: Run script once an hour
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 * * * *'
 
