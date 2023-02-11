@@ -3,6 +3,10 @@ const path = require('path');
 
 const directoryPath = path.join(__dirname, 'main/domains');
 
+const optout = [
+  "MaskDuck"
+];
+
 let combinedArray = [];
 
 fs.readdir(directoryPath, function (err, files) {
@@ -30,7 +34,9 @@ fs.readdir(directoryPath, function (err, files) {
       combinedArray = combinedArray.concat(dataArray);
 
       if (combinedArray.length === files.length) {
-        fs.writeFile('index.json', JSON.stringify(combinedArray), (err) => {
+        const filteredData = combinedArray.filter(entry => !optout.includes(entry.owner.username.toLowerCase()));
+
+        fs.writeFile('index.json', JSON.stringify(filteredData), (err) => {
           if (err) throw err;
           console.log('The file has been saved!');
         });
