@@ -3,9 +3,16 @@ const path = require('path');
 
 const directoryPath = path.join(__dirname, 'main/domains');
 
-const optout = [
-  "maskduck"
-];
+fetch('optout.json')
+  .then(response => response.json())
+  .then(data => {
+    // map the contents of the JSON file to a variable
+    const optout = data;
+    console.log(optout);
+  })
+  .catch(error => console.error(error));
+
+
 
 let combinedArray = [];
 
