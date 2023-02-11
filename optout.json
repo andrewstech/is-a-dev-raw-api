@@ -1,4 +1,6 @@
 {
-  "maskduck",
-  "win11bot"  
+  "users: [
+    "maskduck",
+    "win11bot"
+  ]
 }
