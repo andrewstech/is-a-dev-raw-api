@@ -3,18 +3,10 @@ const path = require('path');
 
 const directoryPath = path.join(__dirname, 'main/domains');
 
-var optout = "1"
-
-fs.readFile('optout.json', 'utf-8', (err, data) => {
-  if (err) {
-    console.error(err);
-  } else {
-    optout = JSON.parse(data);
-    console.log(optout);
-  }
-});
-
-
+const optout = [
+  "maskduck",
+  "win11bot"
+];
 
 let combinedArray = [];
 
@@ -43,10 +35,7 @@ fs.readdir(directoryPath, function (err, files) {
       combinedArray = combinedArray.concat(dataArray);
 
       if (combinedArray.length === files.length) {
-        const filteredData = combinedArray.filter(entry => {
-          return !optout.some(optout => optout.user.toLowerCase() === combinedArray.owner.username.toLowerCase());
-        });
-
+        const filteredData = combinedArray.filter(entry => !optout.includes(entry.owner.username.toLowerCase()));
 
         fs.writeFile('index.json', JSON.stringify(filteredData), (err) => {
           if (err) throw err;
