@@ -3,14 +3,15 @@ const path = require('path');
 
 const directoryPath = path.join(__dirname, 'main/domains');
 
-fetch('optout.json')
-  .then(response => response.json())
-  .then(data => {
-    // map the contents of the JSON file to a variable
-    const optout = data;
+const xhr = new XMLHttpRequest();
+xhr.open('GET', 'optout.json', true);
+xhr.onreadystatechange = function() {
+  if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+    const optout = JSON.parse(xhr.responseText);
     console.log(optout);
-  })
-  .catch(error => console.error(error));
+  }
+};
+xhr.send();
 
 
 
