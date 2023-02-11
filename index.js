@@ -43,7 +43,10 @@ fs.readdir(directoryPath, function (err, files) {
       combinedArray = combinedArray.concat(dataArray);
 
       if (combinedArray.length === files.length) {
-        const filteredData = combinedArray.filter(entry => !optout.includes(entry.owner.username.toLowerCase()));
+        const filteredData = combinedArray.filter(entry => {
+          return !optout.some(optout => optout.user.toLowerCase() === combinedArray.owner.username.toLowerCase());
+        });
+
 
         fs.writeFile('index.json', JSON.stringify(filteredData), (err) => {
           if (err) throw err;
