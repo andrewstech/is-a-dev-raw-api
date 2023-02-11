@@ -7,7 +7,7 @@ fs.readFile('optout.json', 'utf-8', (err, data) => {
   if (err) {
     console.error(err);
   } else {
-    const optout = JSON.parse(data);
+    var optout = JSON.parse(data);
     console.log(optout);
   }
 });
