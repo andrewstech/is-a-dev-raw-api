@@ -3,11 +3,13 @@ const path = require('path');
 
 const directoryPath = path.join(__dirname, 'main/domains');
 
+var optout = "1"
+
 fs.readFile('optout.json', 'utf-8', (err, data) => {
   if (err) {
     console.error(err);
   } else {
-    var optout = JSON.parse(data);
+    optout = JSON.parse(data);
     console.log(optout);
   }
 });
