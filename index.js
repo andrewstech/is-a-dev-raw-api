@@ -4,7 +4,7 @@ const path = require('path');
 const directoryPath = path.join(__dirname, 'main/domains');
 
 const optout = [
-  "MaskDuck"
+  "maskduck"
 ];
 
 let combinedArray = [];
