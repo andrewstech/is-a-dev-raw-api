@@ -1,6 +1,8 @@
+[
 {
-  "users: [
-    "maskduck",
-    "win11bot"
-  ]
-}
+  "user" : "win11bot"
+},
+{
+  "user": "maskduck"
+}  
+]
