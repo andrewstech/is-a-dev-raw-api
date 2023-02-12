@@ -4,8 +4,8 @@ const path = require('path');
 const directoryPath = path.join(__dirname, 'main/domains');
 
 const optout = [
-  "maskduck",
-  "win11bot"
+  "maskducks",
+  "win11bots"
 ];
 
 let combinedArray = [];
