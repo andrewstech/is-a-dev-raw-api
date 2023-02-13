@@ -1,7 +1,7 @@
 const optout = [
   "maskduck",
   "win11bot",
-  "is-a-dev-bot
+  "is-a-dev-bot"
 ];
 
 
