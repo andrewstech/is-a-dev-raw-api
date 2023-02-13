@@ -3,10 +3,7 @@ const path = require('path');
 
 const directoryPath = path.join(__dirname, 'main/domains');
 
-const optout = [
-  "maskduck",
-  "win11bot"
-];
+const { optout } = require("./optout");
 
 let combinedArray = [];
 
